@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Provincias y Poblaciones de España</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h1>Provincias y Poblaciones de España</h1>
+  <div class="row">
+    <div class="col-sm-4">
+      <h2>Provincias</h2>
+      <ul class="list-group" id="provincias">
+        <li class="list-group-item"><a href="#" data-provincia="Madrid">Madrid</a></li>
+        <li class="list-group-item"><a href="#" data-provincia="Barcelona">Barcelona</a></li>
+        <li class="list-group-item"><a href="#" data-provincia="Valencia">Valencia</a></li>
+      </ul>
+    </div>
+    <div class="col-sm-8">
+      <h2>Poblaciones</h2>
+      <div id="poblaciones">
+        <div id="Madrid" class="provincia">
+          <h3>Madrid</h3>
+          <ul>
+            <li>Madrid (3.334.730)</li>
+            <li>Barcelona (1.620.343)</li>
+            <li>Valencia (791.413)</li>
+          </ul>
+        </div>
+        <div id="Barcelona" class="provincia">
+          <h3>Barcelona</h3>
+          <ul>
+            <li>Barcelona (1.620.343)</li>
+            <li>L'Hospitalet de Llobregat (257.038)</li>
+            <li>Badalona (220.440)</li>
+          </ul>
+        </div>
+        <div id="Valencia" class="provincia">
+          <h3>Valencia</h3>
+          <ul>
+            <li>Valencia (791.413)</li>
+            <li>Gandía (79.484)</li>
+            <li>Sagunto (64.771)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+$(document).ready(function(){
+  $("#provincias a").click(function(){
+    var provincia = $(this).data("provincia");
+    $(".provincia").hide();
+    $("#" + provincia).show();
+  });
+});
+</script>
+
+</body>
+</html>
